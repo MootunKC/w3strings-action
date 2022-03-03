@@ -1,5 +1,8 @@
 name: 'W3Strings Encode'
 description: 'Encode CSV to w3strings'
+branding:
+    icon: 'file-text'
+    color: 'gray-dark'
 inputs:
     csv-path:
         description: "Path to the CSV file"
