@@ -4,7 +4,7 @@ This action encodes CSV files to W3Strings.
 
 ## Inputs
 
-## `csv-file`
+## `csv-path`
 
 **Required** The CSV file to encode.
 
@@ -16,5 +16,5 @@ This action encodes CSV files to W3Strings.
 
 uses: actions/w3strings-action@v1
 with:
-  csv-file: 'en.w3strings.csv'
+  csv-path: 'en.w3strings.csv'
   id-space: 1111
