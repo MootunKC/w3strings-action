@@ -1,0 +1,16 @@
+name: 'W3Strings Encode'
+description: 'Encode CSV to w3strings'
+inputs:
+    csv-path:
+        description: "Path to the CSV file"
+        required: true
+    id-space:
+        description: "The ID space while for encoding"
+        required: true
+
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.csv-path  }}
+        - ${{ inputs.id-space  }}
