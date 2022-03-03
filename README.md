@@ -14,7 +14,9 @@ This action encodes CSV files to W3Strings.
 
 ## Example usage
 
+```yml
 uses: actions/w3strings-action@v1
 with:
   csv-path: 'en.w3strings.csv'
   id-space: 1111
+```
