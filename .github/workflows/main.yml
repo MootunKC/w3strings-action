@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Encode
     steps:
+      - uses: actions/checkout@v3
       - name: Encode
         uses: adawesomeguy/w3strings-action@v1.1
         with:
