@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash -l
 
 CSV_FILE="$1"
 ID_SPACE="$2"
@@ -11,7 +11,9 @@ mkdir -p "$OUTPUT_DIR"
 
 function encode {
     OUTPUT="$1"
-    /w3strings/w3strings -e "$CSV_FILE" "$OUTPUT" -i "$ID_SPACE" --very-verbose
+    w3strings -e "$CSV_FILE" -i "$ID_SPACE" --very-verbose
+    mv "$CSV_FILE.w3strings" "$OUTPUT"
+    rm "$CSV_FILE.w3strings.ws"
 }
 
 function check_language_validity {
