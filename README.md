@@ -20,7 +20,7 @@ This action encodes CSV files to W3Strings.
 
 **Optional** The language for the CSV to be encoded to
 
-> Note: Using `all` (the default) is currently broken
+> Note: Using `all` (the default) is currently broken. To encode multiple languages please use a matrix.
 
 ## Example usage
 
