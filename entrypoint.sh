@@ -5,21 +5,9 @@ ID_SPACE="$2"
 OUTPUT_DIR="$3"
 OUTPUT_LANG="$4"
 
-declare -a ALL_LANGUAGES=("ar" "br" "cn" "cz" "de" "en" "es" "esmx" "fr" "hu" "it" "jp" "kr" "pl" "ru" "zh")
+allLanguages="ar br cn cz de en es esmx fr hu it jp kr pl ru zh"
 
 mkdir -p "$OUTPUT_DIR"
-
-check_language_validity "$OUTPUT_LANG"
-
-if [[ "$OUTPUTFILE" = "all" ]]
-then
-    for lang in ${ALL_LANGUAGES[@]}
-    do
-        encode "$lang.w3strings"
-    done
-else
-    encode "$OUTPUT_LANG.w3strings"
-fi
 
 function encode {
     OUTPUT="$1"
@@ -28,12 +16,13 @@ function encode {
 
 function check_language_validity {
     LANGUAGE="$1"
-    VALID_LANGUAGES="$ALL_LANGUAGES"
-    for lang in ${VALID_LANGUAGES[@]}
+
+    isLanguageValid=false
+    for lang in ${allLanguages}
     do
-        if [[ "$LANGUAGE" = lang ]]
+        if [ "$LANGUAGE" = "$lang" ] || [ "$LANGUAGE" = "all" ]
         then
-            break;
+            return
         fi
     done
 
@@ -41,3 +30,15 @@ function check_language_validity {
     echo "Invalid language!"
     exit 1
 }
+
+check_language_validity "$OUTPUT_LANG"
+
+if [[ "$OUTPUTFILE" = "all" ]]
+then
+    for lang in ${allLanguages}
+    do
+        encode "$lang.w3strings"
+    done
+else
+    encode "$OUTPUT_LANG.w3strings"
+fi
