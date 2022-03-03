@@ -7,6 +7,14 @@ inputs:
     id-space:
         description: "The ID space while for encoding"
         required: true
+    out-dir:
+        description: "The output directory path"
+        required: false
+        default: "w3strings"
+    language:
+        description: "The language to encode to (\"all\" encodes one CSV to all languages)"
+        required: false
+        default: "all"
 
 runs:
     using: 'docker'
