@@ -6,7 +6,7 @@ jobs:
     name: Encode
     steps:
       - name: Encode
-        uses: adawesomeguy/w3strings-action
+        uses: adawesomeguy/w3strings-action@v1.1
         with:
           csv-path: 'en.w3strings.csv'
           id-space: 6720
