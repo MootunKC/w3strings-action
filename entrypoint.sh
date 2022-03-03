@@ -13,7 +13,7 @@ check_language_validity "$OUTPUT_LANG"
 
 if [[ "$OUTPUTFILE" = "all" ]]
 then
-    for lang in $ALL_LANGUAGES
+    for lang in ${ALL_LANGUAGES[@]}
     do
         encode "$lang.w3strings"
     done
@@ -29,7 +29,7 @@ function encode {
 function check_language_validity {
     LANGUAGE="$1"
     VALID_LANGUAGES="$ALL_LANGUAGES"
-    for lang in VALID_LANGUAGES
+    for lang in ${VALID_LANGUAGES[@]}
     do
         if [[ "$LANGUAGE" = lang ]]
         then
