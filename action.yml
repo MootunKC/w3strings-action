@@ -22,3 +22,5 @@ runs:
     args:
         - ${{ inputs.csv-path  }}
         - ${{ inputs.id-space  }}
+        - ${{ inputs.out-dir }}
+        - ${{ inputs.language }}
