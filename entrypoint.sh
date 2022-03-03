@@ -5,7 +5,7 @@ ID_SPACE="$2"
 OUTPUT_DIR="$3"
 OUTPUT_LANG="$4"
 
-ALL_LANGUAGES=("ar" "br" "cn" "cz" "de" "en" "es" "esmx" "fr" "hu" "it" "jp" "kr" "pl" "ru" "zh")
+declare -a ALL_LANGUAGES=("ar" "br" "cn" "cz" "de" "en" "es" "esmx" "fr" "hu" "it" "jp" "kr" "pl" "ru" "zh")
 
 mkdir -p "$OUTPUT_DIR"
 
