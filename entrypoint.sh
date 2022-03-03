@@ -12,7 +12,7 @@ mkdir -p "$OUTPUT_DIR"
 function encode {
     OUTPUT="$1"
     w3strings -e "$CSV_FILE" -i "$ID_SPACE" --very-verbose
-    mv "$CSV_FILE.w3strings" "$OUTPUT"
+    mv "$CSV_FILE.w3strings" "$OUTPUT_DIR/$OUTPUT"
     rm "$CSV_FILE.w3strings.ws"
 }
 
