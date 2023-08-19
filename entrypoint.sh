@@ -7,8 +7,6 @@ OUTPUT_LANG="$4"
 
 allLanguages="ar br cn cz de en es esmx fr hu it jp kr pl ru zh"
 
-mkdir -p "$OUTPUT_DIR"
-
 function encode {
     OUTPUT="$1"
     w3strings -e "$CSV_FILE" -i "$ID_SPACE" --very-verbose
@@ -18,7 +16,7 @@ function encode {
 
 function check_language_validity {
     LANGUAGE="$1"
-
+    
     isLanguageValid=false
     for lang in ${allLanguages}
     do
@@ -33,9 +31,12 @@ function check_language_validity {
     exit 1
 }
 
+
 check_language_validity "$OUTPUT_LANG"
 
-if [[ "$OUTPUTFILE" = "all" ]]
+mkdir -p "$OUTPUT_DIR"
+
+if [[ "$OUTPUT_LANG" = "all" ]]
 then
     for lang in ${allLanguages}
     do
