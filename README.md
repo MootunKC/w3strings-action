@@ -20,12 +20,10 @@ This action encodes CSV files to W3Strings.
 
 **Optional** The language for the CSV to be encoded to
 
-> Note: Using `all` (the default) is currently broken. To encode multiple languages please use a matrix.
-
 ## Example usage
 
 ```yml
-uses: adawesomeguy/w3strings-action@v1.1
+uses: abheekda1/w3strings-action@v2.0
 with:
   csv-path: 'en.w3strings.csv'
   id-space: 1111
